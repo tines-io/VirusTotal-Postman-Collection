@@ -1,0 +1,354 @@
+{
+	"variables": [],
+	"info": {
+		"name": "VirusTotal API (Public)",
+		"_postman_id": "060af057-1580-61c9-b690-487290ca21fb",
+		"description": "A collection of API calls for interacting with the [VirusTotal](https://virustotal.com) public API. Maintained by (Tines)[https://tines.io].",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Files",
+			"description": "",
+			"item": [
+				{
+					"name": "Scan file",
+					"request": {
+						"url": "https://www.virustotal.com/vtapi/v2/file/scan",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"description": "",
+									"type": "file",
+									"src": "pdf.pdf"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve file scan report",
+					"request": {
+						"url": "https://www.virustotal.com/vtapi/v2/file/report",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resource",
+									"value": "7657fcb7d772448a6d8504e4b20168b8",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Rescan already submitted file",
+					"request": {
+						"url": "https://www.virustotal.com/vtapi/v2/file/rescan",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resource",
+									"value": "7657fcb7d772448a6d8504e4b20168b8",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "URLs",
+			"description": "",
+			"item": [
+				{
+					"name": "Send and scan URL",
+					"request": {
+						"url": "https://www.virustotal.com/vtapi/v2/url/scan",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://tines.io",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve URL scan report",
+					"request": {
+						"url": "http://www.virustotal.com/vtapi/v2/url/report",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resource",
+									"value": "https://tines.io",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve URL scan report (scan if does not exist)",
+					"request": {
+						"url": "https://www.virustotal.com/vtapi/v2/url/scan",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://tines.io",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "scan",
+									"value": "1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Domains",
+			"description": "",
+			"item": [
+				{
+					"name": "Retrieve domain report",
+					"request": {
+						"url": {
+							"raw": "http://www.virustotal.com/vtapi/v2/domain/report?domain=tines.io&apikey={{apikey}}",
+							"protocol": "http",
+							"host": [
+								"www",
+								"virustotal",
+								"com"
+							],
+							"path": [
+								"vtapi",
+								"v2",
+								"domain",
+								"report"
+							],
+							"query": [
+								{
+									"key": "domain",
+									"value": "tines.io",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "1.1.1.1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IPs",
+			"description": "",
+			"item": [
+				{
+					"name": "Retrieve IP address report",
+					"request": {
+						"url": {
+							"raw": "http://www.virustotal.com/vtapi/v2/ip-address/report?ip=165.227.135.98&apikey={{apikey}}",
+							"protocol": "http",
+							"host": [
+								"www",
+								"virustotal",
+								"com"
+							],
+							"path": [
+								"vtapi",
+								"v2",
+								"ip-address",
+								"report"
+							],
+							"query": [
+								{
+									"key": "ip",
+									"value": "165.227.135.98",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "ip",
+									"value": "1.1.1.1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"description": "",
+			"item": [
+				{
+					"name": "Comment on file or URL",
+					"request": {
+						"url": "https://www.virustotal.com/vtapi/v2/comments/put",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "apikey",
+									"value": "{{apikey}}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "resource",
+									"value": "https://session-limited-expired-paiypial.000webhostapp.com/secured/login",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "PayPal phishing page",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

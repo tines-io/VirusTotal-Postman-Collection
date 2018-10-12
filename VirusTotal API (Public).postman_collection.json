@@ -155,7 +155,7 @@
 				{
 					"name": "Retrieve URL scan report (scan if does not exist)",
 					"request": {
-						"url": "https://www.virustotal.com/vtapi/v2/url/scan",
+						"url": "https://www.virustotal.com/vtapi/v2/url/report",
 						"method": "POST",
 						"header": [],
 						"body": {
